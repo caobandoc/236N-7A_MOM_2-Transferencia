@@ -4,6 +4,7 @@ import {MoviesService} from "../../services/movies.service";
 import {Movie} from "../../models/movie";
 import {NgClass} from "@angular/common";
 import {FormsModule} from "@angular/forms";
+import {MatProgressSpinner} from "@angular/material/progress-spinner";
 
 @Component({
     selector: 'app-catalogo',
@@ -11,7 +12,8 @@ import {FormsModule} from "@angular/forms";
     imports: [
         MoviesComponent,
         NgClass,
-        FormsModule
+        FormsModule,
+        MatProgressSpinner
     ],
     templateUrl: './catalogo.component.html',
     styleUrl: './catalogo.component.css'

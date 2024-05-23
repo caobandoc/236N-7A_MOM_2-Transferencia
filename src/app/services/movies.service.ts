@@ -11,9 +11,6 @@ export class MoviesService {
   constructor(private http:HttpClient) { }
 
   getMovies(): Observable<Movie[]>{
-    return this.http.get<Movie[]>('assets/movies.json')
-        .pipe(
-            delay( Math.random() * 1000 + 500 )
-        );
+    return this.http.get<Movie[]>('assets/movies.json');
   }
 }
