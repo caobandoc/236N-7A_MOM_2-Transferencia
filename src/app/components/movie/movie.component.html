@@ -4,7 +4,7 @@
         <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="card-img-top" alt="...">
         <div class="card-body">
             <p class="card-text">{{ movie.overview }}</p>
-            <button id="btn_info" class="btn btn-primary">Ver más</button>
+            <button id="btn_info" class="btn btn-primary" (click)="openModal()">Ver más</button>
         </div>
         <div class="card-footer text-body-secondary">
             Fecha de estreno: {{ movie.release_date }}

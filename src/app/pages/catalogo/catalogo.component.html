@@ -7,8 +7,7 @@
         Cine Magico
       </a>
       <form id="form-busqueda" class="d-flex" role="search">
-        <input id="busqueda" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Buscar</button>
+        <input class="form-control me-2" placeholder="Buscar" [(ngModel)]="searchInput" (input)="filterMovies()" name="searchInput">
       </form>
     </div>
   </nav>
@@ -19,10 +18,10 @@
       <div id="filtros">
         <p>Ordenar:</p>
         <div class="btn-group">
-          <button id="fPopular" type="button" class="btn btn-outline-primary">Popular</button>
-          <button id="fTitulo" type="button" class="btn btn-outline-primary">Titulo</button>
-          <button id="fFecha" type="button" class="btn btn-outline-primary">Fecha</button>
-          <button id="fVotos" type="button" class="btn btn-outline-primary">Votos</button>
+          <button type="button" class="btn btn-outline-primary" (click)="fPopular()" [ngClass]="{'active': lastFilterButton === 'popular'}">Popular</button>
+          <button type="button" class="btn btn-outline-primary" (click)="fTitulo()" [ngClass]="{'active': lastFilterButton === 'titulo'}">Titulo</button>
+          <button type="button" class="btn btn-outline-primary" (click)="fFecha()" [ngClass]="{'active': lastFilterButton === 'fecha'}">Fecha</button>
+          <button type="button" class="btn btn-outline-primary" (click)="fVotos()" [ngClass]="{'active': lastFilterButton === 'votos'}">Votos</button>
         </div>
       </div>
       <app-movies [listMovies]="listMovies"></app-movies>

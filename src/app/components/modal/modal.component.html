@@ -1,1 +1,17 @@
-<p>modal works!</p>
+<div class="card" style="width: 100%;">
+    <div class="card-body">
+        <div class="d-flex align-items-center justify-content-between">
+            <h1 class="card-title fs-1">{{ movie.title }}</h1>
+            <button type="button" class="btn-close" (click)="onClose()"></button>
+        </div>
+        <img src="https://image.tmdb.org/t/p/w500{{ movie.backdrop_path }}" class="card-img-top" alt="{{ movie.title }}">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Fecha de estreno: {{ movie.release_date | date }}</li>
+            <li class="list-group-item">Popularidad: {{ movie.popularity }}</li>
+            <li class="list-group-item">Promedio de votos: {{ movie.vote_average }}</li>
+            <li class="list-group-item">Cantidad de votos: {{ movie.vote_count }}</li>
+            <li class="list-group-item">Publico: {{ movie.adult ? "Adultos" : "Todo público" }}</li>
+            <li class="list-group-item">Descripción: <p>{{ movie.overview }}</p></li>
+        </ul>
+    </div>
+</div>
