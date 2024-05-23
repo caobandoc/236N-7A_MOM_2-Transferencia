@@ -1,32 +1,42 @@
 <header>
-  <nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand">
-        <img src="assets/film.svg" alt="Logo" width="30" height="24"
-             class="d-inline-block align-text-top">
-        Cine Magico
-      </a>
-      <form id="form-busqueda" class="d-flex" role="search">
-        <input class="form-control me-2" placeholder="Buscar" [(ngModel)]="searchInput" (input)="filterMovies()" name="searchInput">
-      </form>
-    </div>
-  </nav>
-</header>
-<main>
-  <section class="lista container">
-    <div class="container">
-      <div id="filtros">
-        <p>Ordenar:</p>
-        <div class="btn-group">
-          <button type="button" class="btn btn-outline-primary" (click)="fPopular()" [ngClass]="{'active': lastFilterButton === 'popular'}">Popular</button>
-          <button type="button" class="btn btn-outline-primary" (click)="fTitulo()" [ngClass]="{'active': lastFilterButton === 'titulo'}">Titulo</button>
-          <button type="button" class="btn btn-outline-primary" (click)="fFecha()" [ngClass]="{'active': lastFilterButton === 'fecha'}">Fecha</button>
-          <button type="button" class="btn btn-outline-primary" (click)="fVotos()" [ngClass]="{'active': lastFilterButton === 'votos'}">Votos</button>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand">
+                <img src="assets/film.svg" alt="Logo" width="30" height="24"
+                     class="d-inline-block align-text-top">
+                Cine Magico
+            </a>
+            <form id="form-busqueda" class="d-flex" role="search">
+                <input class="form-control me-2" placeholder="Buscar" [(ngModel)]="searchInput" (input)="filterMovies()"
+                       name="searchInput">
+            </form>
         </div>
-      </div>
-      <app-movies [listMovies]="listMovies"></app-movies>
-    </div>
-  </section>
+    </nav>
+</header>
+
+<main>
+    <section class="lista container">
+        <div class="container">
+            <div id="filtros">
+                <p>Ordenar:</p>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-primary" (click)="fPopular()"
+                            [ngClass]="{'active': lastFilterButton === 'popular'}">Popular
+                    </button>
+                    <button type="button" class="btn btn-outline-primary" (click)="fTitulo()"
+                            [ngClass]="{'active': lastFilterButton === 'titulo'}">Titulo
+                    </button>
+                    <button type="button" class="btn btn-outline-primary" (click)="fFecha()"
+                            [ngClass]="{'active': lastFilterButton === 'fecha'}">Fecha
+                    </button>
+                    <button type="button" class="btn btn-outline-primary" (click)="fVotos()"
+                            [ngClass]="{'active': lastFilterButton === 'votos'}">Votos
+                    </button>
+                </div>
+            </div>
+            <app-movies [listMovies]="listMovies"></app-movies>
+        </div>
+    </section>
 </main>
 <footer class="d-flex justify-content-center bg-body-tertiary py-3 text-center">
     <span>© 2024 UCompensar

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {delay, Observable} from "rxjs";
 import {Movie} from "../models/movie";
 
 @Injectable({
@@ -11,6 +11,9 @@ export class MoviesService {
   constructor(private http:HttpClient) { }
 
   getMovies(): Observable<Movie[]>{
-    return this.http.get<Movie[]>('assets/movies.json');
+    return this.http.get<Movie[]>('assets/movies.json')
+        .pipe(
+            delay( Math.random() * 1000 + 500 )
+        );
   }
 }
