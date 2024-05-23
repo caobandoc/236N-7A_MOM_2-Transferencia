@@ -1,1 +1,36 @@
-<p>catalogo works!</p>
+<header>
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand">
+        <img src="assets/film.svg" alt="Logo" width="30" height="24"
+             class="d-inline-block align-text-top">
+        Cine Magico
+      </a>
+      <form id="form-busqueda" class="d-flex" role="search">
+        <input id="busqueda" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+      </form>
+    </div>
+  </nav>
+</header>
+<main>
+  <section class="lista container">
+    <div class="container">
+      <div id="filtros">
+        <p>Ordenar:</p>
+        <div class="btn-group">
+          <button id="fPopular" type="button" class="btn btn-outline-primary">Popular</button>
+          <button id="fTitulo" type="button" class="btn btn-outline-primary">Titulo</button>
+          <button id="fFecha" type="button" class="btn btn-outline-primary">Fecha</button>
+          <button id="fVotos" type="button" class="btn btn-outline-primary">Votos</button>
+        </div>
+      </div>
+      <app-movies [listMovies]="listMovies"></app-movies>
+    </div>
+  </section>
+</main>
+<footer class="d-flex justify-content-center bg-body-tertiary py-3 text-center">
+    <span>© 2024 UCompensar
+      <br>
+      Carlos Andres Obando Casiano</span>
+</footer>

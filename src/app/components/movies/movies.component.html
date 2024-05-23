@@ -1,0 +1,9 @@
+<div id="peliculas" class="row row-cols-auto">
+  @for (movie of listMovies; track movie.id) {
+    <app-movie [movie]="movie"></app-movie>
+  } @empty {
+    <div class="alert alert-danger" role="alert">
+      No se encontraron peliculas
+    </div>
+  }
+</div>
