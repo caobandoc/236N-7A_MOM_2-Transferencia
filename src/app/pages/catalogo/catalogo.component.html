@@ -1,17 +1,26 @@
 <header>
-    <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand">
-                <img src="assets/film.svg" alt="Logo" width="30" height="24"
-                     class="d-inline-block align-text-top">
-                Cine Magico
-            </a>
-            <form id="form-busqueda" class="d-flex" role="search">
-                <input class="form-control me-2" placeholder="Buscar" [(ngModel)]="searchInput" (input)="filterMovies()"
-                       name="searchInput">
-            </form>
-        </div>
-    </nav>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <a routerLink="" class="navbar-brand">
+                    <img src="assets/film.svg" alt="Logo" width="30" height="24"
+                         class="d-inline-block align-text-top">
+                    Cine Magico
+                </a>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active disabled"  routerLink="/catalogo">Catalogo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/contacto">Contacto</a>
+                    </li>
+                </ul>
+                <form id="form-busqueda" class="d-flex" role="search">
+                    <input class="form-control me-2" placeholder="Buscar" [(ngModel)]="searchInput" (input)="filterMovies()"
+                           name="searchInput">
+                </form>
+            </div>
+        </nav>
+
 </header>
 
 <main>
@@ -44,8 +53,4 @@
         </div>
     </section>
 </main>
-<footer class="d-flex justify-content-center bg-body-tertiary py-3 text-center">
-    <span>© 2024 UCompensar
-      <br>
-      Carlos Andres Obando Casiano</span>
-</footer>
+<app-footer></app-footer>

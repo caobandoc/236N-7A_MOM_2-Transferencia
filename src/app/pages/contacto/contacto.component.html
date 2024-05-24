@@ -1,0 +1,64 @@
+<header>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a routerLink="" class="navbar-brand">
+                <img src="assets/film.svg" alt="Logo" width="30" height="24"
+                     class="d-inline-block align-text-top">
+                Cine Magico
+            </a>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/catalogo">Catalogo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active disabled" routerLink="/contacto">Contacto</a>
+                </li>
+            </ul>
+            <div></div>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <div class="container">
+        <h1>Contacto</h1>
+        <form [formGroup]="contacto" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" formControlName="name">
+            </div>
+            @if (contacto.controls.name.errors?.['required']){
+                <div class="alert alert-danger" role="alert">
+                    El nombre es requerido
+                </div>
+            }
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" formControlName="email">
+            </div>
+            @if (contacto.controls.email.errors?.['required']){
+                <div class="alert alert-danger" role="alert">
+                    El email es requerido
+                </div>
+            } @else if (contacto.controls.email.errors?.['email']){
+                <div class="alert alert-danger" role="alert">
+                    El email no es valido
+                </div>
+            }
+            <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="mensaje" rows="3" formControlName="message"></textarea>
+            </div>
+            @if (contacto.controls.message.errors?.['required']){
+                <div class="alert alert-danger" role="alert">
+                    El nombre es requerido
+                </div>
+            }
+            <button type="submit" class="btn btn-primary mb-3" [ngClass]="{'disabled': !contacto.valid}">Enviar</button>
+            <div class="alert alert-success" role="alert" [ngClass]="{'d-none': !success}">
+                A simple success alert—check it out!
+            </div>
+        </form>
+    </div>
+</main>
+<app-footer></app-footer>
